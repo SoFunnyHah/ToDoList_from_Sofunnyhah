@@ -1,10 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 export default function Form({ setTasks, input, setInput }) {
-  // const [input, setInput] = useState({
-  //   title: '',
-  //   description: '',
-  // });
   const inputHandler = (e) => {
     console.log(e.target.name, e.target.value);
     console.log(input, '<-------');

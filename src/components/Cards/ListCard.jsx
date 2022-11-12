@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import OneCard from './OneCard';
 
 export default function ListCard({
-  tasks, setTasks, user, input, setInput,
+  tasks, setTasks, user, input,
 }) {
   useEffect(() => {
     fetch('/api/createTask', {
@@ -25,7 +25,7 @@ export default function ListCard({
           </p>
         ) : (
           <ul>
-            {tasks?.map((el, i) => <OneCard key={el.id} task={el} user={user} setTasks={setTasks} input={input} setInput={setInput} index={i+1} />)}
+            {tasks?.map((el, i) => <OneCard key={el.id} task={el} user={user} setTasks={setTasks} input={input} index={i+1} />)}
           </ul>
         )}
     </div>

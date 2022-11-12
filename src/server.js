@@ -6,6 +6,8 @@ import store from 'session-file-store';
 import indexRouter from './routes/indexRouter';
 import apiRouter from './routes/apiRouter';
 import jsxRender from './utils/jsxRendex';
+import apiAuth from './routes/apiAuth';
+// import authCheck from './middlewares/authCheck';
 
 require('dotenv').config();
 
@@ -44,6 +46,8 @@ app.use((req, res, next) => {
 });
 
 app.use('/', indexRouter);
+app.use('/api/log', apiAuth);
+// app.use(authCheck);
 app.use('/api', apiRouter);
 
 app.listen(PORT, () => {

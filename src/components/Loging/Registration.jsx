@@ -13,18 +13,22 @@ export default function Registration({ setUser }) {
     setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
-    fetch('/api/registration', {
+    const res = await fetch('/api/log/registration', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(input),
-    })
-      .then((res) => res.json())
-      .then((data) => setUser(data))
-      .then(() => navigate('/'));
+    });
+    if (!res.ok) {
+      navigate('/');
+    } else {
+      const newUser = await res.json();
+      setUser(newUser);
+      navigate('/');
+    }
   };
 
   return (

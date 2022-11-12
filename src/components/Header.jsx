@@ -5,7 +5,7 @@ function Header({ user, setUser }) {
   const navigate = useNavigate();
   const handleLogout = async (e) => {
     e.preventDefault();
-    const response = await fetch('/api/logout');
+    const response = await fetch('/api/log/logout');
     if (response.ok) {
       setUser(null);
       navigate('/');
@@ -36,7 +36,7 @@ function Header({ user, setUser }) {
             </li>
           </ul>
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-            {user ? (
+            {user?.id ? (
               <>
                 <li className="nav-item"><Link className="nav-link" onClick={handleLogout} to="/logout">logout</Link></li>
                 <li className="nav-item"><p className="nav-link">{user.username}</p></li>

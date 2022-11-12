@@ -10,6 +10,7 @@ import HomePage from './HomePage';
 export default function App({ user }) {
   const [currentUser, setCurrentUser] = useState(user || null);
   console.log(user);
+
   return (
     <div className="container">
       <Header user={currentUser} setUser={setCurrentUser} />

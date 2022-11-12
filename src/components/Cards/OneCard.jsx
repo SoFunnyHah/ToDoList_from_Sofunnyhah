@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 export default function OneCard({
-  task, user, setTasks, input, setInput, index,
+  task, user, setTasks, input, index,
 }) {
   const [newInput, setNewInput] = useState({
     title: '',
@@ -91,9 +91,6 @@ export default function OneCard({
               </form>
 
             </div>
-            {/* <div className="modal-footer">
-                <button type="button" className="btn btn-primary" data-bs-dismiss="modal">OK</button>
-              </div> */}
           </div>
         </div>
       </div>

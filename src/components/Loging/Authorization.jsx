@@ -14,7 +14,7 @@ export default function Authorization({ setUser }) {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    fetch('/api/authorization', {
+    fetch('/api/log/authorization', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
